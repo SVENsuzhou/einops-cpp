@@ -82,7 +82,7 @@ private:
 	static uint64_t _UUID;
 };
 
-uint64_t AnonymousAxis::_UUID { 0 };
+inline uint64_t AnonymousAxis::_UUID { 0 };
 
 inline bool operator==(AnonymousAxis const& lhs, AnonymousAxis const& rhs)
 {
