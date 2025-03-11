@@ -21,7 +21,7 @@ inline auto _product(std::vector<int64_t> const& sequence) -> int64_t
 
 static LRUCache<Hash, TransformRecipe> _transformRecipeCache (256);
 
-auto _prepare_transformation_recipe(Pattern const& pattern, Reduction const& operation, AxesLengths const& axes_names, int64_t ndim) -> TransformRecipe
+static auto _prepare_transformation_recipe(Pattern const& pattern, Reduction const& operation, AxesLengths const& axes_names, int64_t ndim) -> TransformRecipe
 {
 	auto hash = HashBuilder()(pattern, operation, print(axes_names), print(ndim));
 	if (_transformRecipeCache.exists(hash))
