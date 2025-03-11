@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5)
 
 project("einops" VERSION 1.0.0 LANGUAGES CXX)
 
@@ -23,7 +23,7 @@ target_include_directories(${PROJECT_NAME} INTERFACE
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-option(ENABLE_EINOPS_TESTING "Build einops test suite" ON)
+option(ENABLE_EINOPS_TESTING "Build einops test suite" OFF)
 if (ENABLE_EINOPS_TESTING)
     add_subdirectory("test")
 endif()
